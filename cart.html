@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tedevel</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+ <link rel="stylesheet" href="stylesheet.css">
+ <title>Payment Page</title>
+</head>
+<body>
+ <header>
+    <section id="header">
+        <a href="#"><img src="IMAGES/logo.png" class="logo" alt=""></a>
+    
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Bakery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="ig-bag"><a href="cart.html"><i class="fas fa-bags-shopping"></i></a></li>
+            <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <a href="cart.html"><i class="fas fa-bags-shopping"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+    </div>
+ </header>
+ <div><marquee behavior="slow" direction="left"><h3> WARNING!!!!: Ensure Product Ordered Or Room Booked For,
+    Should Be Same As The Description In the Transaction Receipt For Easy Verification. </h3>
+ </marquee></div>
+ <h1>Payment</h1>
+ <main class="cartmain">
+    <div>
+        <h4>Bank: Moniepoint</h4>
+        <h4>Account Number: </h4>
+    </div>
+ </main>
+<main class="cartmain">
+    <form id="paymentForm">
+        <label for="name" class="orderlabel">Name:</label>
+        <input type="text" id="name" required class="orderinput"><br>
+       
+        <label for="bank" class="orderlabel">Bank:</label>
+        <input type="text" id="bank" required class="orderinput">
+       
+        <label for="ordered" class="orderlabel" >Product Ordered Or Room Booked For:</label>
+        <input type="text" id="ordered" required class="orderinput">
+
+        <button id="pay" type="ordernow" class="orderbutton" >Send Transfer Receipt</button>
+        </form>
+ </main>
+
+    <script>
+         //payment
+          document.getElementById("pay").addEventListener("click", function() {
+            const name = document.getElementById("name").value;
+            const bank = document.getElementById("bank").value;
+            const ordered = document.getElementById("ordered").value;
+            const subject = encodeURIComponent("Payment Confirmation Receipt");
+
+            const body = encodeURIComponent(`Dear ${name},\n\nAttach a picture showing proof of successful transaction {A Receipt}.
+            \n\nWith this desription \n${ordered}\n
+             And your name as: ${name},
+            transaction made with this ${bank}
+            You will receive a confirmation of payment message on this email.
+            Best regards,\nTedeval co.`);
+            // Create the mailto link
+            const mailtoLink = `mailto:your.tedevelcompany@gmail.com?subject=${subject}&body=${body}`;
+             // Redirect to the mailto link
+            window.location.href = mailtoLink;
+            });
+    </script>
+
+ <footer class="section-p1">
+    <div class="col">
+        <img src="IMAGES/logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 17, church street, Agodo Alara, Ita Oluwo, Lagos</p>
+        <p><strong>Phone:</strong> +2348130020065, +2348063484791</p>
+        <p><strong>Hours:</strong> Every Hours, Sun - Sat</p>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+                <i class="fab fa-brands fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About Us</a>
+        <a href="deliveryinfo.html">Delivery Information</a>
+        <a href="policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    
+
+    <div class="col install">
+        <h4>Install App </h4>
+        <p>From App Store Or Google Play</p>
+        <div class="row">
+            <img src="IMAGES/pay/app.jpg" alt="">
+            <img src="IMAGES/pay/play.jpg" alt="">
+        </div>
+        <p> Secured Payment Gateways</p>
+        <img src="IMAGES/pay/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+        <p>© 2024, Tedevel Companies Organisation</p>
+    </div>
+
+</footer>
+
+</body>
+</html>

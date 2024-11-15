@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tedevel</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <link rel="stylesheet" href="stylesheet.css">
+
+        </head>
+        <body>
+            <section id="header">
+                <a href="#"><img src="IMAGES/logo.png" class="logo" alt=""></a>
+            
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="bakery.html">Bakery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="ig-bag"><a href="cart.html"><i class="fas fa-bags-shopping"></i></a></li>
+                    <a href="#" id="close"><i class="far fa-times"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fas fa-bags-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+            </section>
+           <section id="bookinghero"><h1>Book A Room</h1></section>
+           
+        <div class="bookingcontainer" id="bookingbody">
+       <main class="cartmain">
+         <!-- Dynamically generate values as needed -->
+         <label for="name" class="bookinglabel">Your Name:</label>
+         <input type="text" id="name" placeholder="Enter your name" required class="bookinginput">
+         <label for="roomBooked" class="bookinglabel">Room To Book:</label>
+         <select id="roomBooked" required class="bookingselect">
+           <option value="" disabled selected>Select a room</option>
+           <option value="">Single Room</option>
+           <option value="102- ₦12,000">102- ₦12,000</option>
+           <option value="103- ₦12,000">103- ₦12,000</option>
+           <option value="202- ₦12,000">202- ₦12,000</option>
+           <option value="203- ₦12,000">203- ₦12,000</option>
+           <option value="205- ₦12,000">205- ₦12,000</option>
+           <option value="207- ₦12,000">207- ₦12,000</option>
+           <option value="">Executive Dulux</option>
+           <option value="204- ₦15,000">204- ₦15,000</option>
+           <option value="206- ₦15,000">206- ₦15,000</option>
+           <option value="209- ₦15,000">209- ₦15,000</option>
+           <option value="">Executive Double</option>
+           <option value="112- ₦25,000">101- ₦25,000</option>
+           <option value="201- ₦20,000">201- ₦20,000</option>
+           <option value="208- ₦20,000">208- ₦20,000</option>
+           </select>
+         <label for="checkIn" class="bookinglabel">Checkin Date:</label>
+         <input type="date" id="checkIn" placeholder="Enter checkin date" required class="bookinginput">
+         <label for="checkOut" class="bookinglabel">Checkout Date:</label>
+         <input type="date" id="checkOut" placeholder="Enter checkout date" required class="bookinginput">
+         <button id="emailButton" class="bookingbutton">Send Confirmation Email</button>
+           </div>
+        </main>
+        <script>
+             //booking page
+    document.getElementById("emailButton").addEventListener("click", function() {
+        const name = document.getElementById("name").value;
+        const roomBooked = document.getElementById("roomBooked").value;
+        const checkIn = document.getElementById("checkIn").value;
+        const checkOut = document.getElementById("checkOut").value;
+        // Construct the email body
+        const subject = encodeURIComponent("Booking Confirmation");
+        const body = encodeURIComponent(`Dear ${name},\n\nThank you for your
+       booking!\n\nYou have booked the following room:\n${roomBooked}\n\n${checkIn}\n\n${checkOut}\n\nBest regards,\nTedeval co.`);
+        // Create the mailto link
+        const mailtoLink = `mailto:your.tedevelcompany@gmail.com?subject=${subject}&body=${body}`;
+        // Redirect to the mailto link
+        window.location.href = mailtoLink;
+        });
+        </script>
+        <footer class="section-p1">
+            <div class="col">
+                <div class="flogo"><img src="IMAGES/logo.png" alt=""></div>
+                
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 17, church street, Agodo Alara, Ita Oluwo, Lagos</p>
+                <p><strong>Phone:</strong> +2348130020065, +2348063484791</p>
+                <p><strong>Hours:</strong> Every Hours, Sun - Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <i class="fab fa-brands fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest-p"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About Us</a>
+                <a href="deliveryinfo.html">Delivery Information</a>
+                <a href="policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <div class="col install">
+                <h4>Install App </h4>
+                <p>From App Store Or Google Play</p>
+                <div class="row">
+                    <img src="IMAGES/pay/app.jpg" alt="">
+                    <img src="IMAGES/pay/play.jpg" alt="">
+                </div>
+                <p> Secured Payment Gateways</p>
+                <img src="IMAGES/pay/pay.png" alt="">
+            </div>
+
+            <div class="copyright">
+                <p>© 2024, Tedevel Companies Organisation</p>
+            </div>
+
+        </footer>
+      
+           </body>
+</html>
